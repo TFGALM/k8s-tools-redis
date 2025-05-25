@@ -1,0 +1,49 @@
+master:
+  podLabels: {}
+  podAnnotations: {}
+  persistence:
+    size: 4Gi
+    annotations: {}
+    labels: {}
+  resourcesPreset: "nano"
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+
+replica:
+  podLabels: {}
+  podAnnotations: {}
+  persistence:
+    size: 4Gi
+    annotations: {}
+    labels: {}
+    storageClass: "local-storage"
+  resourcesPreset: "nano"
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000   
+
+global:
+  redis:
+    password: ""
+
+nameOverride: ""
+fullnameOverride: ""
+namespaceOverride: ""
+
+kubectl: 
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+
+metrics:
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+
+sentinel:
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+
+
